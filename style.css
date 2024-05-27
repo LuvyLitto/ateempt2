@@ -1,0 +1,1125 @@
+
+/* --------------- reset.css --------------- */
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, em, img, strong, sub, sup, b, u, i,  dl, dt, dd, ol, ul, li, fieldset, form, label, table, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;                               /* обнуляем отступы и убираем бордюры */
+	vertical-align: baseline;          /* приводим все к одной базовой линии */
+	background: transparent;      /* чтобы не проскакивали левые фоны, установленные по умолчанию */
+	font-size: 100%;                     /* размер шрифта всем одинаковый */
+}
+a {                                      	     /* ссылка не в общем списке чтобы не сбрасывать outline по умолчанию */
+	margin:0;
+	padding:0;
+	font-size:100%;
+	vertical-align:baseline;
+	background:transparent;
+	outline:none;
+}
+table {						/* устраняем отступы между ячейками таблицы */
+	border-collapse: collapse; 
+	border-spacing: 0;
+}
+td, td img {
+	vertical-align: top;			/* возвращаем привычное вертикальное выравнивание */
+} 
+input, select, button, textarea {
+	margin: 0; 				/* убираем отступы по умолчанию для элементов форм (в частности для checkbox и radio) */
+	font-size: 100%; 			/* делаем размер шрифтов везде одинаковым */
+	outline: none;
+}
+input[type="text"], input[type="password"], textarea {
+	padding: 0; 				/* убираем внутренние отступы для текстовых полей */
+}
+input[type="checkbox"] { 		/* вертикальное выравнивание чекбоксов и радиобатонов относительно меток */
+	vertical-align: bottom;
+}
+input[type="radio"] {
+	vertical-align: text-bottom;
+}
+sub {
+	vertical-align: sub;
+	font-size: smaller;
+}
+sup {
+	vertical-align: super;
+	font-size: smaller;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display:block;
+}
+nav ul {
+	 list-style:none;
+}
+/* --------------- /reset.css --------------- */
+
+/* --------------- базовые настройки ---------*/
+html {
+	min-height:100%; /* всегда показываем вертикальную полосу прокрутки  */
+}
+body {
+	color: #000;
+	text-align: left;
+	font-size: 1em; /* используем безопасные шрифтовые CSS стеки */
+	min-height:100%;
+}
+a:hover {
+	color: #fdf208;
+	text-decoration:none;
+}
+a:focus, a:active {
+	color: #c83867;
+	text-decoration: underline;
+}
+h1, h2, h3, h4, h5, h6{
+	font-weight:normal;
+}
+img{
+
+	max-width:100%;
+}
+.clr{
+	clear:both;
+}
+.clearfix:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+/* --------------- /базовые настройки ---------*/
+.top-header{
+    margin: 2em auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 71%;
+    height: 4.875em;
+    background: #FFFFFF;
+    border: 1px solid #EAECF1;
+    border-radius: 4.25em;
+    padding: 0px 12px 0px 32px;
+    box-shadow: 0 0.75em 2.5em #0B11221A;
+}
+    .logo-group{
+        display: flex;
+        margin-top: 10px;
+    }
+        .logo-group img{
+            width: 6.4em;
+            height: 1.5em;
+        }
+    .button{
+        display: flex;
+        background: #3661EB;
+        font-family: "Noto Sans", sans-serif;
+        font-size: 1.125em;
+        font-weight: 500;
+        line-height: 1.35em;
+        text-align: center;
+        color: #FFFFFF;
+        padding: 16px 32px;
+        border-radius: 2em;
+        max-height: 54px;
+    }
+    .top-header a{
+        text-decoration: none;
+        color: #FFFFFF;
+        font-family: "Noto Sans", sans-serif;
+        font-size: 1.125em;
+        font-weight: 500;
+        line-height: 1.35em;
+        text-align: center;
+    }
+
+    .top-header ul{
+        display: flex;
+        justify-content: right;
+        max-width: 90%;
+        list-style: none;
+    }
+    .top-header ul li a{
+        padding: 0.75em 1.5em;
+        font-family: "Noto Sans", sans-serif;
+        font-size: 1em;
+        font-weight: 400;
+        line-height: 120%;
+        text-align: center;
+        text-decoration: none;
+        color: #777D8C;
+    }
+    .top-header ul li a:hover{
+        color: #3661EB;
+    }
+    .dropdown{
+        position: relative;
+        display: inline-block;
+    }
+    .dropdown-content{
+        width: 138px;
+        display: none;
+        position: absolute;
+        z-index: 1;
+        font-family: "Noto Sans", sans-serif;
+        font-size: 1em;
+        font-weight: 400;
+        line-height: 120%;
+        text-decoration: none;
+        color: #777D8C;
+        background-color: #e9ebff;
+    }
+    .dropdown-content a:hover{
+        color: #3661EB;
+    }
+    .dropdown-content a{
+        color: #777D8C;
+        display: block;
+    }
+    .dropdown-block{
+        border: 1px solid #C6C9D8;
+        width: 114px;
+        padding: 12px;
+        align-content: start;
+        display: flex;
+    }
+    .dropdown:hover .dropdown-content{
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: start;
+    }
+    .arrow-down{
+        border: solid #777D8C;
+        border-width: 0 1px 1px 0;
+        display: inline-block;
+        padding: 3px;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        margin-bottom: 5px;
+        margin-left: 5px;
+    }
+.center-block-main{
+    margin: 0 auto;
+    max-width: 71%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.center-block-main main{
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+}
+.page1-images{
+    display: flex;
+    justify-content: space-between;
+    gap: 2.375em;
+    align-items: end;
+}
+.side-img{
+    display: flex;
+    justify-content: space-between;
+}
+.center-img{
+    display: flex;
+}
+.center-img img{
+    width:70.75em;
+    margin-top: 3.125em;
+}
+.group1{
+    display: flex;
+    justify-content: space-between;
+}
+.link{
+    display: flex;
+    justify-content: space-between;
+    width: 197px;
+    height: 50px;
+    margin-top: 18px;
+}
+.center-block-main article{
+    display: flex;
+    flex-direction: column;
+    padding-top: 4.375em;
+    max-width: 624px;
+}
+.center-block-main h2{
+    display: flex;
+    padding-top: 0.625em;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 3em;
+    font-weight: 600;
+    text-align: left;
+}
+.center-block-main h1{
+    display: flex;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 4.5em;
+    font-weight: 700;
+    text-align: left;
+    color: #3661EB;
+}
+.group1-text{
+    display: flex;
+    flex-direction: column;
+    font-family: "Noto Sans", sans-serif;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0.625em;
+    text-align: left;
+    width: 135px;
+    margin-top: 32px;
+}
+.group1-text a{
+    font-family: "Noto Sans", sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+    color: #3661EB;
+    font-weight: 500;
+}
+.group1-text a:hover{
+    text-decoration: underline;
+}
+.center-block-main article p{
+    font-family: "Noto Sans", sans-serif;
+    font-size: 0.875em;
+    font-weight: 400;
+    text-align: left;
+}
+.group1 img{
+    margin-top: 1em;
+    display: flex;
+    width: 50px;
+    height: 50px;
+}
+.center-block-main aside{
+    margin-top: 4.375em;
+    padding-bottom: 0.75em;
+    width: 387px;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 1.25em;
+    line-height: 1.5em;
+    font-weight: 400;
+    text-align: left;
+    color: #0B1122B2;
+}
+aside header{
+    font-family: "Noto Sans", sans-serif;
+    font-size: 0.875em;
+    font-weight: 400;
+    line-height: 1.05em;
+    text-align: left;
+    margin-top: 0.6em;
+    padding-bottom: 0.75em;
+}
+.img-container{
+    display: flex;
+    position: relative;
+    justify-content: left;
+}
+.img-container img{
+    height: 2.75em;
+    width: 2.75em;
+    border-radius: 50%;
+    border: 0.125em solid #EAECF1;
+    margin-right: -0.875em;
+}
+.page2{
+    background: #0B1122;
+    height: 56.4375em;
+}
+.page2-main-content{
+    padding-top: 7.5em;
+    width: 71.5em;
+    margin: 0 auto;
+}
+.page2-main-content h6{
+    font-family: "Noto Sans", sans-serif;
+    text-transform: uppercase;
+    font-size: 1.25em;
+    font-weight: 500;
+    line-height: 1.5em;
+    text-align: left;
+    color: #3661EB;
+    padding-bottom: 1.5em;
+}
+.page2-top{
+    display: flex;
+    justify-content: space-between;
+}
+.arrows-container{
+    display: flex;
+    justify-content: space-between;
+    width: 10.8%;
+}
+.page2-top p{
+    font-family: "Noto Sans", sans-serif;
+    font-size: 2.75em;
+    font-weight: 600;
+    text-align: left;
+    color: #FFFFFF;
+    width: 63%;
+    text-transform: capitalize;
+}
+.page2-content{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 4.375em;
+}
+.page2-content-text{
+    display: flex;
+    flex-direction: column;
+    width: 49%;
+    gap: 60px;
+}
+.page2-content ul{
+    font-family: "Noto Sans", sans-serif;
+    font-size: 1.125em;
+    font-weight: 400;
+    text-align: left;
+    color: #C6C9D8;
+    line-height: 150%;
+}
+.page2-content ul li{
+    margin-bottom: 2em;
+}
+.page2-content-link a{
+    font-family: "Noto Sans", sans-serif;
+    color: #FFFFFF !important;
+    font-size: 1.125em;
+    font-weight: 400;
+    text-align: left;
+    line-height: 120%;
+    border-bottom: 1px solid #FFFFFF33;
+    text-decoration: none;
+}
+.page2-content-img{
+    z-index: 1;
+}
+.page2-content-text img{
+    margin-bottom: -3px;
+}
+.ellipse1{
+    position: absolute;
+    z-index: -1;
+    top: 15.625em;
+    right: 14.25em;
+}
+.ellipse2{
+    position: absolute;
+    z-index: -1;
+    top: 34.375em;
+    right: 8.125em;
+}
+.page2-main-content{
+    padding-top: 7.5em;
+    width: 71.5em;
+    margin: 0 auto;
+}   
+.page3{
+    background: #F5F7F9;
+    height: 56.4375em;
+}
+.page3-top p{
+    font-family: "Noto Sans", sans-serif;
+    font-size: 2.75em;
+    font-weight: 600;
+    text-align: left;
+    color: #000000;
+    width: 63%;
+}
+.page3-content{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 4.375em;
+    gap: 4.375em;
+}
+.page3-content ul{
+    font-family: "Noto Sans", sans-serif;
+    font-size: 1.125em;
+    font-weight: 400;
+    line-height: 150%;
+    text-align: left;
+    color: #0B1122CC;
+}
+.page3-content-text{
+    margin-top: 3.375em;
+    width: 34.875em;
+}
+.page3-content-text a{
+    font-family: "Noto Sans", sans-serif;
+    color: #0B1122;
+    font-size: 1.125em;
+    font-weight: 400;
+    text-align: left;
+    padding-bottom: 8px;
+    text-decoration: none;
+    border-bottom: 1px solid #EAECF1;
+}
+.page3-content-text img{
+    margin-bottom: -3px;
+}
+.page3-top{
+    display: flex;
+    justify-content: space-between;
+}
+.page3-top p{
+    text-transform: capitalize;
+}
+.page3-content ul li{
+    margin-bottom: 32px;
+    font-family: "Noto Sans",sans-serif;
+    font-size: 1.125em;
+    font-weight: 400;
+    line-height: 150%;
+    text-align: left;
+}
+.page3-content ul li::marker{
+    color: #3661EB;
+}
+.page4-content-link{
+    padding-top: 79px;
+    font-family: "Noto Sans", sans-serif;
+}
+.page4-content-link a{
+    color: #FFFFFF !important;
+    font-size: 1.125em;
+    font-weight: 400;
+    text-align: left;
+    line-height: 120%;
+    border-bottom: 1px solid #FFFFFF33;
+    text-decoration: none;
+}
+.page5-content-text{
+    width: 34.875em;
+    margin-top: 1em;
+}
+.page5-content-text a{
+    font-family: "Noto Sans", sans-serif;
+    color: #0B1122;
+    font-size: 1.125em;
+    font-weight: 400;
+    text-align: left;
+    padding-bottom: 8px;
+    text-decoration: none;
+    border-bottom: 1px solid #EAECF1;
+}
+.page6-top{
+    display: flex;
+    max-width: 71.5em;
+    margin: 0 auto;
+    flex-direction: column;
+    padding-top: 116px;
+}
+.header-p6 h1{
+    color: #0B1122; 
+    font-size: 2.75em; 
+    font-family: "Noto Sans", sans-serif; 
+    font-weight: 600; 
+    text-transform: capitalize;  
+    word-wrap: break-word;
+    display: flex;
+    padding-bottom: 60px;
+}
+.page6-content{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 71.5em;
+    gap: 1.5em;
+    margin-bottom: -1.5em;
+}
+.page6-column{
+    flex-direction: column;
+    max-width: 48.5%;
+    max-height: 546px;
+    padding-bottom: 120px;
+}
+.page6-column h4{
+    font-size: 1.25em;
+    font-family: "Noto Sans", sans-serif; 
+    font-weight: 500; 
+    text-transform: capitalize; 
+    line-height: 1.5em; 
+    word-wrap: break-word;
+    margin-bottom: 1.5em;
+    text-align: left;
+    line-height: 120%;
+    color: #0B1122CC;
+}
+.button-block-page6{
+    display: flex;
+    gap: 12px;
+    height: 12.75em;
+    border: 1.5em solid transparent;
+    border-image: url(/images/border.png) 30 round;
+    border-radius: 12px;
+    margin-bottom: 2.5em;
+    flex-wrap: wrap;
+}
+.button-page6{
+    display: flex;
+    padding: 0.375em 0.625em; 
+    background: #0B11220A; 
+    border-radius: 0.25em;
+    font-family: "Noto Sans",sans-serif;
+    line-height: 130%;
+    color: #0B1122CC;
+    text-decoration: none;
+    font-size: 0.875em;
+    font-weight: 400;
+    align-items: center;
+    height: 19.5px;
+}
+.button-block-page6 a:hover{
+    text-decoration: underline;
+    color: #0B1122;
+}
+.page6-picture{
+    padding-top:  7.625em;
+}
+.page6-text h3{
+    font-family: "Noto Sans", sans-serif;
+    font-size: 2.5em;
+    font-weight: 600;
+    text-align: left;
+    color: #fff;
+    line-height: 130%;
+}
+.page6-bottom{
+    position: relative;
+}
+.page6-text{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 20.8125em;
+    height: 18.375em;
+    font-family: "Noto Sans",sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1.5em;
+    text-align: left;
+    color: #FFFFFF;
+    right: 4.5em;
+    bottom: 11.4375em;
+    position: absolute;
+    line-height: 150%;
+}
+.page6-button-bottom{
+    font-family: "Noto Sans", sans-serif;
+    font-size: 1.125em;
+    font-weight: 500;
+    padding: 1em 2em;
+    border-radius: 2.375em;
+    background: #FFFFFF;
+    color: #3661EB;
+    text-align: center;
+    text-decoration: none;
+}
+.page6-button-bottom:hover{
+    text-decoration: underline;
+    color: #3661EB;
+}
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background:#0B1122;
+}
+.footer-content{
+    width: 71%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 7.5em;
+    padding-bottom: 3.75em;
+}
+.footer-column{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    list-style: none;
+    height: 14.375em;
+}
+.footer-column li{
+    text-decoration: none;
+    color: #FFFFFFBF;
+    font-family: "Noto Sans", sans-serif;   
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 120%;
+}
+.footer-column a{
+    text-decoration: none;
+}
+.footer-box{
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5em;
+    padding:  1.875em 2.5em;
+    background: #121A30;
+    max-width: 15.875em;
+    height: 10.625em;
+    gap: 1.5em;
+}
+.footer-box p{
+    font-family: "Noto Sans", sans-serif;
+    font-size: 0.75em;
+    font-weight: 400;
+    line-height: 160%;
+    text-align: left;
+    color: #FFFFFF99;
+}
+footer h5{
+    font-family: "Noto Sans", sans-serif;
+    font-size: 1em;
+    font-weight: 600;
+    line-height: 120%;
+    text-align: left;
+    color: #FFFFFF;
+}
+.email-form{
+    position: relative;
+    width: 254px;
+    height: 50px;
+}
+.email{
+    position: absolute;
+    height: 50px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    border-radius: 0.375em;
+    border: 1.5px solid #FFFFFF1A;
+    color: #777D8C;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 0.875em;
+    font-weight: 400;
+    line-height: 130%;
+    text-align: left;
+    background: #FFFFFF1A;
+    padding: 0 60px 0 16px;
+}
+.email-button{
+    position: absolute;
+    left: 12.75em;
+    top: 0;
+}
+.footer-bottom{
+    margin: 0 auto;
+    padding-top: 2.8125em;
+    padding-bottom: 3.75em;
+    width: 71%;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    border-top: 2px solid #EAECF11A;
+}
+.footer-bottom-list{
+    display: flex;
+    justify-content: space-between;
+    gap: 2.5em;
+    list-style: none;
+    padding: 11px 0 11px 0;
+}
+.footer-bottom-list li{
+    font-family: "Noto Sans", sans-serif;
+    font-size: 0.875em;
+    font-weight: 500;
+    line-height: 105%;
+    text-align: left;
+    color: #FFFFFF;
+}
+.footer-bottom-list a{
+    text-decoration: none;
+}
+.footer-bottom-list a:hover{
+    text-decoration: underline #FFFFFF;
+}
+.footer-column a:hover{
+    text-decoration: underline #777D8C;
+}
+.footer-bottom-picture-list{
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;  
+    align-items: end;
+    list-style: none;
+}
+
+.slider {
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    display: none; /* Initially hide all slides */
+}
+
+.slide.active {
+    display: block; /* Show only the active slide */
+}
+
+button{
+    background-color: transparent;
+    border: none;cursor: pointer;
+    padding: 0;
+    appearance: none;
+}
+button:disabled {
+    background-color: rgba(0, 0, 0, 0.2);
+    cursor: not-allowed;
+}
+.slider::-webkit-scrollbar{
+    display: none;
+}
+button::-webkit-slider-thumb{
+    display: none;
+}
+.prev, .next{
+    background-color: transparent;
+}
+
+@media (max-width: 394px){
+    .top-header{
+        margin: 1em auto;
+        max-width: 90%;
+        height: 2em;
+    }
+    .logo-group{
+        display: none;
+        margin-top: 10px;
+    }
+        .logo-group img{
+            display: none;
+            width: 6.4em;
+            height: 1.5em;
+        }
+    .arrow-down{
+        margin-bottom: 1px;
+        margin-left: 0px;
+        padding: 2px;
+    }
+    .top-header ul{
+        display: flex;
+        justify-content: right;
+        gap: 10px;
+    }
+    .top-header ul li a{
+        padding: 0;
+        font-size: 8px;
+    }
+    .top-header a{
+        text-decoration: none;
+        color: #FFFFFF;
+        font-family: "Noto Sans", sans-serif;
+        font-size: 10px;
+        font-weight: 500;
+        line-height: 1.35em;
+        text-align: center;
+    }
+    .button{
+        display: flex;
+        padding: 6px 12px;
+        border-radius: 2em;
+        max-height: 28px;
+    }
+    .center-block-main{
+        margin: 0 auto;
+        max-width: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .center-block-main article{
+        display: flex;
+        flex-direction: column;
+        padding-top: 0;
+        max-width: 624px;
+    }
+    .center-block-main main{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .center-block-main h2{
+        padding-top: 0.625em;
+        font-size: 1.5em;
+    }
+    .link{
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+        margin-top: 0;
+    }
+    .group1{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+    .group1-text{
+        margin: 0;
+    }
+    .group1-text a{
+        font-family: "Noto Sans", sans-serif;
+        font-size: 20px;
+        text-decoration: none;
+        color: #3661EB;
+        font-weight: 500;
+    }
+    .group1 img{
+        margin-top: 0;
+    }
+    .center-block-main h1{
+        font-size: 3.5em;
+    }
+    .center-block-main aside{
+        margin-top: 1.375em;
+        padding-bottom: 0.75em;
+        width: 90%;
+        font-size: 12px;
+        line-height: 140%;
+        font-weight: 400;
+    }
+    .page1-images{
+        gap: 0.375em;
+    }
+    .page2{
+        height: 20.4375em;
+    }
+    .page2-main-content{
+        padding-top: 1.5em;
+        width: 90%;
+    }
+    .page2-main-content h6{
+        font-size: 10px;
+        font-weight: 500;
+        line-height: 1.5em;
+        color: #3661EB;
+        padding-bottom: 0.5em;
+    }   
+    .page2-top p{
+        font-size: 16px;
+        width: 80%;
+    }
+    .page2-content{
+        padding-top: 1.375em;
+        flex-direction: column;
+    }
+    .page2-content-text{
+        display: flex;
+        width: 90%;
+        gap: 10px;
+    }
+    .page2-content ul{
+        font-family: "Noto Sans", sans-serif;
+        font-size: 12px;
+    }
+    .page2-content ul li{
+        margin-bottom: 10px;
+    }
+    .page2-content-img{
+        display: none;
+        z-index: 1;
+    }
+    .page2-content-link a{
+        font-size: 10px;
+        line-height: 120%;
+        border-bottom: 1px solid #FFFFFF33;
+        text-decoration: none;
+    }
+    .page2-content-link img{
+        max-width: 10px;
+    }
+    .page3{
+        height: 20.4375em;
+    }
+    .page3-top p{
+        width: 80%;
+        font-size: 16px;
+    }
+    .page3-content{
+        padding-top: 1.375em;
+        flex-direction: column;
+    }
+    .page3-content-text{
+        display: flex;
+        width: 90%;
+        gap: 10px;
+        margin-top: 0;
+        flex-direction: column;
+    }
+    .page3-content ul{
+        font-family: "Noto Sans", sans-serif;
+        font-size: 12px;
+    }
+    .page3-content ul li{
+        margin-bottom: 10px;
+        font-size: 12px;
+    }
+    .page3-content-text a{
+        font-size: 10px;
+    }
+    .page3-content img{
+        max-width: 10px;
+    }
+    .page4-content-link{
+        padding-top: 0;
+    }
+    .page4-content-link a{
+        font-size: 10px;
+    }
+    .page4-content-link img{
+        max-width: 10px;
+    }
+    .page5-content-text{
+        display: flex;
+        width: 90%;
+        gap: 10px;
+        margin-top: 0;
+        flex-direction: column;
+    }
+    .page5-content-text a{
+        font-size: 10px;
+    }
+    .page5-content-text img{
+        max-width: 10px;
+    }
+    .page6-top{
+        max-width: 90%;
+        padding-top: 1.375em;
+    }
+    .header-p6 h1{
+        font-size: 18px; 
+        padding-bottom: 15px;
+    }
+    .page6-content{
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        margin-bottom: -1.5em;
+    }
+    .page6-column h4{
+        font-size: 14px;  
+        margin-bottom: 1em;
+        line-height: 120%;
+    }
+    .page6-column{
+        flex-direction: column;
+        max-width: 100%;
+        max-height: 0%;
+        padding-bottom: 0;
+    }
+    .button-block-page6{
+        gap: 8px;
+        height: 12.75em;
+        border: 1.5em solid transparent;
+        border-image: url(/images/border.png) 30 round;
+        border-radius: 12px;
+        margin-bottom: 15px;
+        flex-wrap: wrap;
+    }
+    .button-page6{
+        padding: 0.35em 0.65em; 
+        line-height: 110%;
+        font-size: 10px;
+        height: 12.5px;
+    }
+    
+    .page6-text{
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 120px;
+        height: fit-content;
+        font-size: 8px;
+        right: 12px;
+        bottom: 55px;
+        position: absolute;
+        line-height: 150%;
+    }
+    .page6-text h3{
+        font-size: 10px;
+    }
+    .page6-button-bottom{
+        font-size: 8px;
+        font-weight: 500;
+        padding: 3px 6px;
+        margin-top: 5px;
+    }
+    .page6-picture{
+        padding-top:  20px;
+    }
+    
+    .footer-content{
+        width: 90%;
+        padding-top: 1.5em;
+        padding-bottom: 0.3em;
+        flex-wrap: wrap;
+    }
+    footer h5{
+        font-size: 12px;
+        margin-bottom: 7px;
+    }
+    .footer-column{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: fit-content;
+    }
+    .footer-column li{ 
+        font-size: 10px;
+        margin-bottom: 5px;
+    }
+    .footer-box{
+        margin: 10px auto;
+        padding:  5px 7px;
+        background: #121A30;
+        max-width: 15.875em;
+        height: 10.625em;
+        gap: 1.5em;
+    }
+    .footer-box p{
+        font-family: "Noto Sans", sans-serif;
+        font-size: 0.75em;
+        font-weight: 400;
+        line-height: 160%;
+        text-align: left;
+        color: #FFFFFF99;
+    }
+    .footer-bottom{
+        margin: 0 auto;
+        align-items: center;
+        padding-top: 0.8125em;
+        padding-bottom: 10px;
+        width: 90%;
+    }
+    .footer-bottom-list{
+        gap: 15px;
+        list-style: none;
+        padding: 5px 0 5px 0;
+    }
+    .footer-bottom-list li{
+        font-size: 8px;
+    }
+    .footer-bottom-picture-list{
+        gap: 5px;  
+    }
+    .footer-bottom img{
+        max-width: 50px;
+    }
+} 
